@@ -1,0 +1,223 @@
+# Create index.html
+cat > iska-photobooth/index.html <<EOL
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iska's Photobooth</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <section class="hero" data-aos="fade-in">
+    <div class="hero-content">
+      <h1 data-aos="fade-up" data-aos-delay="200">Welcome to Iska's Photobooth 📸</h1>
+      <p data-aos="fade-up" data-aos-delay="400">Capture your best memories with style and fun!</p>
+      <a href="#contact" class="btn-primary" data-aos="zoom-in" data-aos-delay="600">Book Now</a>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <h2 data-aos="fade-up">Our Booth Features</h2>
+    <div class="features-grid">
+      <div class="feature-item" data-aos="fade-right" data-aos-delay="200">
+        <h3>HD Quality Photos</h3>
+        <p>Crisp, clear, beautiful shots every time.</p>
+      </div>
+      <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+        <h3>Fun Props & Backdrops</h3>
+        <p>Bring your creativity to life with exciting props.</p>
+      </div>
+      <div class="feature-item" data-aos="fade-left" data-aos-delay="600">
+        <h3>Instant Sharing</h3>
+        <p>Share your moments instantly with friends!</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <h2 data-aos="fade-up">Gallery Preview</h2>
+    <div class="gallery-grid">
+      <img src="https://via.placeholder.com/300x200" alt="Gallery Image 1" data-aos="zoom-in" data-aos-delay="200">
+      <img src="https://via.placeholder.com/300x200" alt="Gallery Image 2" data-aos="zoom-in" data-aos-delay="400">
+      <img src="https://via.placeholder.com/300x200" alt="Gallery Image 3" data-aos="zoom-in" data-aos-delay="600">
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2 data-aos="fade-up">Contact & Booking</h2>
+    <p data-aos="fade-up" data-aos-delay="200">Ready to make memories? Let's chat!</p>
+    <a href="mailto:contact@iskaphotobooth.com" class="btn-primary" data-aos="zoom-in" data-aos-delay="400">Email Us</a>
+  </section>
+
+  <script src="js/main.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
+</body>
+</html>
+EOL
+
+# Create style.css
+cat > iska-photobooth/css/style.css <<EOL
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: #f9fafb;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://via.placeholder.com/1200x600') center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-content {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 16px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn-primary {
+  background: #ff5a5f;
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: all 0.4s ease;
+}
+
+.btn-primary:hover {
+  background: #e04848;
+  transform: scale(1.1);
+}
+
+/* Features Section */
+.features {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.features-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  width: 300px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery Section */
+.gallery {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.gallery-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery-grid img {
+  border-radius: 12px;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact {
+  padding: 60px 20px;
+  text-align: center;
+  background: #ffe0e6;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.contact p {
+  margin-bottom: 20px;
+}
+EOL
+
+# Create main.js
+cat > iska-photobooth/js/main.js <<EOL
+// Smooth animations initialized in index.html using AOS
+console.log("Iska's Photobooth site initialized 🚀");
+EOL
